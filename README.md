@@ -5,9 +5,6 @@
 #### Alire: https://github.com/alire-project/alire/releases
 - Download and unzip the latest linux zip
 - Add `where_you_unzipped/alr` to [PATH](https://phoenixnap.com/kb/linux-add-to-path)  
-```console  
-source ~/.bashrc
-```
 - Verify Alire is found on your path. 
 ```console   
 which alr
@@ -20,7 +17,7 @@ sudo apt install openocd
 
 #### STM32f429 board
 - Plug it to your computer using the [USB MIN B cable](https://www.reviewgeek.com/53587/usb-explained-all-the-different-types-and-what-theyre-used-for/)
-![stm32f429disco](https://raw.githubusercontent.com/wolfbiters/blinky_stm32f429disco/main/.github/stm32f429disco.jpg)
+![stm32f429disco](https://raw.githubusercontent.com/wolfbiters/blinky_stm32f429disco/main/stm32f429disco.jpg)
 
 ### Build
 ```console
