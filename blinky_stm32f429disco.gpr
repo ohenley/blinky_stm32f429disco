@@ -1,0 +1,30 @@
+with "config/blinky_stm32f429disco_config.gpr";
+with "config/stm32_config_config.gpr";
+project Blinky_Stm32f429disco is
+
+   for Target use "arm-eabi";
+   case Stm32_Config_Config.Runtime is
+      when "light_tasking" => 
+         for Runtime ("Ada") use "light-tasking-" & Stm32_Config_Config.Board;
+      when others =>
+         for Runtime ("Ada") use Stm32_Config_Config.Runtime & "-" & Stm32_Config_Config.Board;
+   end case;
+
+   for Source_Dirs use ("src/", "config/");
+   for Object_Dir use "obj/" & Blinky_Stm32f429disco_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("blinky.adb");
+
+   package Compiler is
+      for Default_Switches ("ada") use Compiler'Default_Switches ("Ada") &
+        ("-gnatwa", "-gnatQ", "-gnatw.X", "-gnaty", "-gnatyO", "-gnatyM120",
+         "-ffunction-sections", "-fdata-sections", "-fcallgraph-info=su");
+   end Compiler;
+
+   package Linker is
+      for Default_Switches ("Ada") use
+        ("-Wl,--gc-sections");
+   end Linker;
+
+end Blinky_Stm32f429disco;

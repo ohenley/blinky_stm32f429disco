@@ -1,0 +1,30 @@
+name = "blinky_stm32f429disco"
+description = "Blink leds on the stm32f429disco dev board"
+version = "1.0.0"
+licenses = "BSD-3-Clause"
+
+tags = ["embedded"]
+website = "https://github.com/wolfbiters/beta_types"
+
+authors = ["wolf biters"]
+maintainers = ["wolf biters <the.wolf.biters@gmail.com>"]
+maintainers-logins = ["wolfbiters"]
+
+executables = ["blinky"]
+
+[[depends-on]]
+gnat_arm_elf = "^12"
+arm_cortex = "1.0.0"
+beta_types = "1.0.0"
+hal_embedded = "1.0.0"
+stm32_svd = "1.0.0"
+stm32_drivers = "1.0.0"
+stm32_components = "1.0.0"
+stm32_boards = "1.0.0"
+
+[configuration.values]
+arm_cortex.core = "m4f"
+stm32_config.board = "stm32f429disco"
+stm32_config.mcu = "stm32f429x"
+stm32_config.runtime = "embedded"
+
