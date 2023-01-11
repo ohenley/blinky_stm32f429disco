@@ -4,7 +4,7 @@ version = "1.0.0"
 licenses = "BSD-3-Clause"
 
 tags = ["embedded"]
-website = "https://github.com/wolfbiters/beta_types"
+website = "https://github.com/wolfbiters/blinky_stm32f429disco"
 
 authors = ["wolf biters"]
 maintainers = ["wolf biters <the.wolf.biters@gmail.com>"]
