@@ -16,7 +16,7 @@ which alr
 sudo apt install openocd
 ```
 
-#### STM32f429 board
+#### STM32f429 Discovery board
 ![stm32f429disco](https://raw.githubusercontent.com/wolfbiters/blinky_stm32f429disco/main/stm32f429disco.jpg)   
 - Plug it to your computer using the [USB MIN B cable](https://www.reviewgeek.com/53587/usb-explained-all-the-different-types-and-what-theyre-used-for/)
 
