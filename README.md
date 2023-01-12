@@ -38,12 +38,23 @@ When you are done, you can delete it:
 alr index --del testindex
 ```
 
-### Build
+### Fetch 
 ```console
 alr get blinky_stm32f429disco
 cd blinky*
-alr build
 ```  
+
+### Build (Visual Studio Code)
+```console
+alr build
+```
+
+### Build (GnatStudio)
+```console
+eval "$(alr printenv)"
+gprbuild blinky_stm32f429disco.gpr
+gnatstudio blinky_stm32f429disco.gpr
+```
 
 ### Run
 
