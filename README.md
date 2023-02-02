@@ -16,7 +16,7 @@ which alr
 sudo apt install openocd
 ```
 
-#### STM32f429 board
+#### STM32f429 Discovery board
 ![stm32f429disco](https://raw.githubusercontent.com/wolfbiters/blinky_stm32f429disco/main/stm32f429disco.jpg)   
 - Plug it to your computer using the [USB MIN B cable](https://www.reviewgeek.com/53587/usb-explained-all-the-different-types-and-what-theyre-used-for/)
 
@@ -25,20 +25,36 @@ The chain of crates used by this project is a breaking reorganization of files f
 
 For the following reasons I do not plan to publish, for the time being, those crates on the official Alire index:
 - I do not want to create noise over an "official" AdaCore Alire crate distribution of Ada_Drivers_Library.
-- I moved the type definitions found in `hal.ads` to `beta_types.ads` and gave it its own repo. Conceptually I disliked to depend on the Hardware Abstraction Layer package for 'C like' types. This decision will surely not be consensual. I could revert this change if it makes people mad.
-- I decided to parameterize `runtime`, `mcu` and `runtime` configuration variables in the root `stm32_config` crate. Using any combinaison of those three variables my goal is to support many boards. Now, I am new to both Alire and Ada_Drivers_Library so my solution might be inadequate in the long run. Right now I cannot test this solution as I only support the stm32f429disco configuration path. 
+- I moved the type definitions found in `hal.ads` to `beta_types.ads` and gave it its own crate. Conceptually I disliked to depend on the Hardware Abstraction Layer package for 'C like' types. This decision will surely not be consensual so I could revert this change for some arguments.
+- I decided to parameterize `core` in the **arm_cortex** crate and `board`, `mcu`, `runtime` configuration variables in the root **stm32_config** crate. Using any combinaison of those four variables my goal is to support many boards. Now, I am new to both Alire and Ada_Drivers_Library so my solution might be inadequate in the long run. Right now I cannot test this solution further as I only support the stm32f429disco configuration path. It is my next step.
 
-- Install my forked Alire index named `testindex` locally.
+Install my forked Alire index named `testindex` locally:
 ```
 alr index --add git+https://github.com/wolfbiters/alire-index.git#stable-1.2.1 --name testindex
 ```
 
-### Build
+When you are done, you can delete it:
+```
+alr index --del testindex
+```
+
+### Fetch 
 ```console
 alr get blinky_stm32f429disco
 cd blinky*
-alr build
 ```  
+
+### Build (Visual Studio Code)
+```console
+alr build
+```
+
+### Build (GnatStudio)
+```console
+eval "$(alr printenv)"
+gprbuild blinky_stm32f429disco.gpr
+gnatstudio blinky_stm32f429disco.gpr
+```
 
 ### Run
 
