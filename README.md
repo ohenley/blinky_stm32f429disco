@@ -30,7 +30,7 @@ For the following reasons I do not plan to publish, for the time being, those cr
 
 Install my forked Alire index named `testindex` locally:
 ```
-alr index --add git+https://github.com/wolfbiters/alire-index.git#stable-1.2.1 --name testindex
+alr index --add git+https://github.com/ohenley/alire-index.git#stable-1.2.1 --name testindex
 ```
 
 When you are done, you can delete it:
