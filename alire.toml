@@ -7,7 +7,7 @@ executables = [
 ]
 licenses = "BSD-3-Clause"
 maintainers = [
-"olivier henley <ohenley@gmail.com>",
+"olivier henley <olivier.henley@gmail.com>",
 ]
 maintainers-logins = [
 "ohenley",
