@@ -1,30 +1,44 @@
-name = "blinky_stm32f429disco"
+authors = [
+"AdaCore",
+]
 description = "Blink leds on the stm32f429disco dev board"
-version = "1.0.0"
+executables = [
+"blinky",
+]
 licenses = "BSD-3-Clause"
-
-tags = ["embedded"]
-website = "https://github.com/wolfbiters/blinky_stm32f429disco"
-
-authors = ["wolf biters"]
-maintainers = ["wolf biters <the.wolf.biters@gmail.com>"]
-maintainers-logins = ["wolfbiters"]
-
-executables = ["blinky"]
-
+maintainers = [
+"olivier henley <ohenley@gmail.com>",
+]
+maintainers-logins = [
+"ohenley",
+]
+name = "blinky_stm32f429disco"
+tags = [
+"embedded",
+]
+version = "1.0.0"
+website = "https://github.com/ohenley/blinky_stm32f429disco"
+[configuration]
+auto_gpr_with = true
+disabled = false
+generate_ada = true
+generate_c = true
+generate_gpr = true
+output_dir = "config"
+[configuration.values]
+[configuration.values.arm_cortex]
+core = "m4f"
+[configuration.values.stm32_config]
+board = "stm32f429disco"
+mcu = "stm32f429x"
+runtime = "embedded"
 [[depends-on]]
-gnat_arm_elf = "^12"
 arm_cortex = "1.0.0"
 beta_types = "1.0.0"
+gnat_arm_elf = "^12"
 hal_embedded = "1.0.0"
-stm32_svd = "1.0.0"
-stm32_drivers = "1.0.0"
-stm32_components = "1.0.0"
 stm32_boards = "1.0.0"
-
-[configuration.values]
-arm_cortex.core = "m4f"
-stm32_config.board = "stm32f429disco"
-stm32_config.mcu = "stm32f429x"
-stm32_config.runtime = "embedded"
+stm32_components = "1.0.0"
+stm32_drivers = "1.0.0"
+stm32_svd = "1.0.0"
 

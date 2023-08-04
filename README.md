@@ -23,10 +23,8 @@ sudo apt install openocd
 ### Add custom Alire index (IMPORTANT)
 The chain of crates used by this project is a breaking reorganization of files found in [Ada_Bare_Metal_Demos](https://github.com/lambourg/Ada_Bare_Metal_Demos) and [Ada_Drivers_Library](https://github.com/AdaCore/Ada_Drivers_Library).
 
-For the following reasons I do not plan to publish, for the time being, those crates on the official Alire index:
-- I do not want to create noise over an "official" AdaCore Alire crate distribution of Ada_Drivers_Library.
 - I moved the type definitions found in `hal.ads` to `beta_types.ads` and gave it its own crate. Conceptually I disliked to depend on the Hardware Abstraction Layer package for 'C like' types. This decision will surely not be consensual so I could revert this change for some arguments.
-- I decided to parameterize `core` in the **arm_cortex** crate and `board`, `mcu`, `runtime` configuration variables in the root **stm32_config** crate. Using any combinaison of those four variables my goal is to support many boards. Now, I am new to both Alire and Ada_Drivers_Library so my solution might be inadequate in the long run. Right now I cannot test this solution further as I only support the stm32f429disco configuration path. It is my next step.
+- I decided to parameterize `core` in the **arm_cortex** crate and `board`, `mcu`, `runtime` configuration variables in the root **stm32_config** crate.
 
 Install my forked Alire index named `testindex` locally:
 ```
